@@ -238,7 +238,7 @@ while [[ $# -gt 0 ]]; do
             echo "  --e2e         Ejecutar solo pruebas end-to-end"
             echo "  --coverage    Ejecutar solo pruebas con cobertura"
             echo "  --help        Mostrar esta ayuda"
-            exit 0
+    exit 0
             ;;
         *)
             print_error "Opción desconocida: $1"
