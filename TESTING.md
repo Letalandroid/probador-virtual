@@ -1,224 +1,370 @@
-# 🧪 Guía de Testing - Probador Virtual
+# Guía de Testing - Proyecto Probador Virtual
 
-Esta guía explica cómo ejecutar y mantener los tests del sistema completo del probador virtual.
+## 📋 Resumen
 
-## 📋 Resumen de Tests
+Este documento describe la estrategia completa de testing implementada en el proyecto Probador Virtual, incluyendo pruebas unitarias, de integración y end-to-end para el frontend (React), backend (NestJS) y API de Python.
 
-El sistema incluye tests en tres niveles:
+## 🏗️ Arquitectura de Testing
 
-1. **Backend (NestJS)** - Tests unitarios e integración
-2. **Frontend (React)** - Tests unitarios e integración
-3. **Python (IA)** - Tests unitarios para servicios de IA
-4. **Integración Completa** - Tests end-to-end entre todos los servicios
+### Estructura de Directorios
 
-## 🚀 Ejecución Rápida
-
-### Ejecutar todos los tests
-```bash
-./run-tests.sh
+```
+probador_virtual/
+├── backend/
+│   ├── src/
+│   │   ├── auth/auth.service.spec.ts          # Pruebas unitarias AuthService
+│   │   ├── products/products.service.spec.ts  # Pruebas unitarias ProductsService
+│   │   └── guards/auth.guard.spec.ts          # Pruebas unitarias AuthGuard
+│   └── test/
+│       ├── integration/
+│       │   ├── auth.integration.spec.ts       # Pruebas integración auth
+│       │   └── python-api.integration.spec.ts # Pruebas integración Python API
+│       └── app.e2e-spec.ts                    # Pruebas E2E backend
+├── frontend/
+│   ├── src/
+│   │   ├── hooks/__tests__/
+│   │   │   ├── useProducts.test.ts            # Pruebas unitarias useProducts
+│   │   │   └── useCategories.test.ts          # Pruebas unitarias useCategories
+│   │   ├── contexts/__tests__/
+│   │   │   └── AuthContext.test.tsx           # Pruebas unitarias AuthContext
+│   │   ├── components/__tests__/
+│   │   │   └── SearchBar.test.tsx             # Pruebas unitarias SearchBar
+│   │   └── __tests__/integration/
+│   │       └── frontend-backend.integration.test.tsx # Pruebas integración frontend-backend
+├── test/
+│   ├── e2e/
+│   │   └── full-system.e2e.spec.ts            # Pruebas E2E completas
+│   ├── global-setup.ts                        # Setup global Playwright
+│   └── global-teardown.ts                     # Teardown global Playwright
+├── run-tests.sh                               # Script para ejecutar todas las pruebas
+└── playwright.config.ts                       # Configuración Playwright
 ```
 
-### Ejecutar tests individuales
+## 🧪 Tipos de Pruebas
+
+### 1. Pruebas Unitarias
+
+#### Backend (NestJS + Jest)
+
+**Servicios:**
+- `AuthService`: Registro, login, validación de usuarios
+- `ProductsService`: CRUD de productos, búsqueda, filtrado
+- `CategoriesService`: Gestión de categorías
+
+**Guards:**
+- `AuthGuard`: Validación de tokens JWT
+
+**Características:**
+- Mocking de PrismaService
+- Mocking de JwtService
+- Cobertura de casos exitosos y de error
+- Validación de respuestas y estados
+
+**Ejemplo de ejecución:**
+```bash
+cd backend
+npm run test
+npm run test:cov  # Con cobertura
+```
+
+#### Frontend (React + Jest + Testing Library)
+
+**Hooks:**
+- `useProducts`: Gestión de productos, filtrado, búsqueda
+- `useCategories`: Gestión de categorías
+
+**Contextos:**
+- `AuthContext`: Autenticación, login, logout, registro
+
+**Componentes:**
+- `SearchBar`: Búsqueda en tiempo real, limpieza de input
+
+**Características:**
+- Mocking de apiService
+- Testing de estados de carga y error
+- Testing de interacciones de usuario
+- Cobertura de casos edge
+
+**Ejemplo de ejecución:**
+```bash
+cd frontend
+npm run test
+npm run test:coverage  # Con cobertura
+```
+
+### 2. Pruebas de Integración
+
+#### Backend ↔ Python API
+
+**Endpoints probados:**
+- `/ai/health`: Verificación de salud de la API de Python
+- `/ai/detect-torso`: Detección de torso en imágenes
+- `/ai/virtual-try-on`: Prueba virtual de prendas
+- `/ai/analyze-clothing-fit`: Análisis de ajuste de prendas
+- `/ai/multiple-angles`: Generación de múltiples ángulos
+- `/ai/enhance-image`: Mejora de imágenes
+
+**Características:**
+- Testing con datos reales de imagen (base64)
+- Manejo de errores de conectividad
+- Validación de respuestas de la API de Python
+- Testing de autenticación requerida
+
+#### Frontend ↔ Backend
+
+**Flujos probados:**
+- Carga de productos desde el backend
+- Búsqueda y filtrado de productos
+- Navegación a detalles de producto
+- Autenticación de usuarios
+- Manejo de errores de red
+
+**Características:**
+- Testing de componentes completos con datos reales
+- Simulación de interacciones de usuario
+- Validación de estados de carga y error
+- Testing de navegación entre páginas
+
+### 3. Pruebas End-to-End (E2E)
+
+#### Sistema Completo (Playwright)
+
+**Flujos completos:**
+- Registro y autenticación de usuarios
+- Navegación por el catálogo de productos
+- Búsqueda y filtrado de productos
+- Visualización de detalles de producto
+- Integración con probador virtual
+- Panel de administración
+
+**Características:**
+- Testing en múltiples navegadores (Chrome, Firefox, Safari)
+- Testing en diferentes dispositivos (Desktop, Mobile)
+- Testing de rendimiento y tiempos de carga
+- Manejo de errores de red y timeouts
+- Limpieza automática de datos de prueba
+
+## 🚀 Ejecución de Pruebas
+
+### Script Principal
+
+El proyecto incluye un script `run-tests.sh` que automatiza la ejecución de todas las pruebas:
+
+```bash
+# Ejecutar todas las pruebas
+./run-tests.sh
+
+# Solo pruebas unitarias
+./run-tests.sh --unit
+
+# Solo pruebas de integración
+./run-tests.sh --integration
+
+# Solo pruebas E2E
+./run-tests.sh --e2e
+
+# Solo pruebas con cobertura
+./run-tests.sh --coverage
+```
+
+### Ejecución Manual
 
 #### Backend
 ```bash
 cd backend
-npm test                    # Tests unitarios
-npm run test:e2e           # Tests de integración
+npm run test              # Pruebas unitarias
+npm run test:watch        # Modo watch
+npm run test:cov          # Con cobertura
+npm run test:e2e          # Pruebas E2E
 ```
 
 #### Frontend
 ```bash
 cd frontend
-npm test                   # Tests unitarios
-npm run test:coverage      # Tests con cobertura
+npm run test              # Pruebas unitarias
+npm run test:watch        # Modo watch
+npm run test:coverage     # Con cobertura
 ```
 
-#### Python (IA)
+#### E2E (Playwright)
 ```bash
-cd python
-source env/bin/activate    # Activar entorno virtual
-pytest tests/ -v          # Tests unitarios
+# Instalar Playwright
+npm install @playwright/test
+npx playwright install
+
+# Ejecutar pruebas E2E
+npx playwright test
+
+# Ejecutar en modo UI
+npx playwright test --ui
+
+# Ejecutar en modo debug
+npx playwright test --debug
 ```
 
-## 📁 Estructura de Tests
+## 📊 Cobertura de Código
 
-```
-├── backend/
-│   ├── src/
-│   │   ├── auth/
-│   │   │   └── auth.service.spec.ts
-│   │   ├── products/
-│   │   │   └── products.service.spec.ts
-│   │   └── ...
-│   └── test/
-│       └── integration/
-│           └── auth.integration.spec.ts
-├── frontend/
-│   ├── src/
-│   │   ├── lib/__tests__/
-│   │   │   └── api.test.ts
-│   │   ├── contexts/__tests__/
-│   │   │   └── AuthContext.test.tsx
-│   │   └── __tests__/integration/
-│   │       └── virtual-try-on.integration.test.tsx
-│   ├── jest.config.js
-│   └── src/setupTests.ts
-├── python/
-│   └── tests/
-│       ├── test_torso_detection.py
-│       └── test_clothing_overlay.py
-└── run-tests.sh
-```
+### Backend
+- **Objetivo**: >80% cobertura
+- **Archivos cubiertos**: Servicios, Guards, Controladores
+- **Reporte**: `backend/coverage/lcov-report/index.html`
+
+### Frontend
+- **Objetivo**: >80% cobertura
+- **Archivos cubiertos**: Hooks, Contextos, Componentes
+- **Reporte**: `frontend/coverage/lcov-report/index.html`
 
 ## 🔧 Configuración
 
-### Backend (NestJS)
-- **Framework**: Jest + Supertest
-- **Cobertura**: Automática con `--coverage`
-- **Base de datos**: Mock con Prisma
+### Variables de Entorno
 
-### Frontend (React)
-- **Framework**: Jest + React Testing Library
-- **Configuración**: `jest.config.js`
-- **Setup**: `src/setupTests.ts`
+```bash
+# URLs de los servicios
+FRONTEND_URL=http://localhost:5173
+BACKEND_URL=http://localhost:3000
+PYTHON_API_URL=http://localhost:8000
 
-### Python (IA)
-- **Framework**: Pytest + pytest-asyncio
-- **Mocking**: unittest.mock
-- **Async**: Soporte completo para async/await
+# Configuración de base de datos para testing
+DATABASE_URL=postgresql://user:password@localhost:5432/probador_virtual_test
+```
 
-## 📊 Cobertura de Tests
+### Configuración de Jest
 
-### Backend
-- ✅ Servicios de autenticación
-- ✅ Servicios de productos
-- ✅ Controladores de API
-- ✅ Integración con base de datos
-- ✅ Validación de DTOs
+#### Backend (`backend/package.json`)
+```json
+{
+  "jest": {
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": ["**/*.(t|j)s"],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
+```
 
-### Frontend
-- ✅ Contextos de React (AuthContext)
-- ✅ Servicios de API
-- ✅ Componentes de UI
-- ✅ Hooks personalizados
-- ✅ Integración con servicios externos
+#### Frontend (`frontend/jest.config.js`)
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  moduleNameMapping: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  collectCoverageFrom: [
+    'src/**/*.(ts|tsx)',
+    '!src/**/*.d.ts',
+    '!src/main.tsx',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'html'],
+};
+```
 
-### Python (IA)
-- ✅ Detección de torso
-- ✅ Superposición de prendas
-- ✅ Análisis de ajuste
-- ✅ Generación de múltiples ángulos
-- ✅ Mejora de imágenes
-
-## 🧪 Tipos de Tests
-
-### 1. Tests Unitarios
-**Propósito**: Probar funciones individuales en aislamiento
+### Configuración de Playwright
 
 ```typescript
-// Ejemplo: Backend
-describe('AuthService', () => {
-  it('should validate user credentials', async () => {
-    const result = await authService.validateUser(credentials);
-    expect(result).toBeDefined();
-  });
+// playwright.config.ts
+export default defineConfig({
+  testDir: './test/e2e',
+  fullyParallel: true,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: [
+    ['html'],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['junit', { outputFile: 'test-results/results.xml' }],
+  ],
+  use: {
+    baseURL: process.env.FRONTEND_URL || 'http://localhost:5173',
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+    { name: 'Mobile Chrome', use: { ...devices['Pixel 5'] } },
+    { name: 'Mobile Safari', use: { ...devices['iPhone 12'] } },
+  ],
+  webServer: [
+    {
+      command: 'cd frontend && npm run dev',
+      url: 'http://localhost:5173',
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command: 'cd backend && npm run start:dev',
+      url: 'http://localhost:3000',
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command: 'cd python && python run_api.py',
+      url: 'http://localhost:8000',
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
 });
 ```
 
-### 2. Tests de Integración
-**Propósito**: Probar la interacción entre componentes
+## 📈 Métricas y Reportes
 
-```typescript
-// Ejemplo: Frontend
-describe('Virtual Try-On Integration', () => {
-  it('should process virtual try-on successfully', async () => {
-    // Test completo del flujo de try-on
-  });
-});
-```
+### Reportes Generados
 
-### 3. Tests End-to-End
-**Propósito**: Probar el flujo completo del sistema
+1. **Jest (Unitarias)**
+   - HTML: `coverage/lcov-report/index.html`
+   - LCOV: `coverage/lcov.info`
+   - Texto: Consola
 
+2. **Playwright (E2E)**
+   - HTML: `test-results/index.html`
+   - JSON: `test-results/results.json`
+   - JUnit: `test-results/results.xml`
+   - Videos: `test-results/`
+   - Screenshots: `test-results/`
+
+### Métricas Objetivo
+
+- **Cobertura de código**: >80%
+- **Tiempo de ejecución unitarias**: <30 segundos
+- **Tiempo de ejecución E2E**: <5 minutos
+- **Tasa de éxito**: >95%
+
+## 🐛 Debugging
+
+### Pruebas Unitarias
 ```bash
-# Verificar que todos los servicios estén corriendo
-curl http://localhost:3000/health  # Backend
-curl http://localhost:8000/health  # Python API
-curl http://localhost:5173         # Frontend
-```
-
-## 🔍 Debugging de Tests
-
-### Backend
-```bash
+# Debug con Node.js
 cd backend
-npm test -- --verbose
-npm test -- --detectOpenHandles
-```
+npm run test:debug
 
-### Frontend
-```bash
+# Debug con Jest
 cd frontend
-npm test -- --verbose
-npm test -- --no-cache
+npm run test -- --verbose --no-cache
 ```
 
-### Python
+### Pruebas E2E
 ```bash
-cd python
-pytest tests/ -v -s
-pytest tests/ --tb=short
+# Debug con Playwright
+npx playwright test --debug
+
+# Ejecutar una prueba específica
+npx playwright test full-system.e2e.spec.ts --grep "should complete user registration"
+
+# Ver reporte HTML
+npx playwright show-report
 ```
 
-## 📈 Métricas de Calidad
-
-### Cobertura Mínima Requerida
-- **Backend**: 80%
-- **Frontend**: 70%
-- **Python**: 75%
-
-### Verificar Cobertura
-```bash
-# Backend
-cd backend && npm run test:coverage
-
-# Frontend
-cd frontend && npm run test:coverage
-
-# Python
-cd python && pytest tests/ --cov=src --cov-report=html
-```
-
-## 🚨 Troubleshooting
-
-### Problemas Comunes
-
-1. **Tests de integración fallan**
-   - Verificar que todos los servicios estén corriendo
-   - Verificar variables de entorno
-   - Verificar conectividad de red
-
-2. **Tests de Python fallan**
-   - Verificar que el entorno virtual esté activado
-   - Verificar que las dependencias estén instaladas
-   - Verificar que la API key de Gemini esté configurada
-
-3. **Tests de Frontend fallan**
-   - Verificar que las dependencias estén instaladas
-   - Verificar la configuración de Jest
-   - Verificar los mocks
-
-### Logs de Debug
-```bash
-# Ejecutar con logs detallados
-DEBUG=* npm test
-NODE_ENV=test npm test
-```
-
-## 🔄 CI/CD
+## 🔄 CI/CD Integration
 
 ### GitHub Actions (Ejemplo)
+
 ```yaml
 name: Tests
 on: [push, pull_request]
@@ -226,62 +372,63 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run Backend Tests
-        run: cd backend && npm test
-      - name: Run Frontend Tests
-        run: cd frontend && npm test
-      - name: Run Python Tests
-        run: cd python && pytest tests/
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: ./run-tests.sh --coverage
+      - uses: codecov/codecov-action@v3
+        with:
+          files: ./backend/coverage/lcov.info,./frontend/coverage/lcov.info
 ```
 
 ## 📝 Mejores Prácticas
 
-### 1. Naming Convention
-- Tests descriptivos: `should return user data when credentials are valid`
-- Agrupar por funcionalidad: `describe('AuthService')`
-- Usar `it` para casos específicos
+### Escribir Pruebas
 
-### 2. Arrange-Act-Assert
-```typescript
-it('should create product successfully', async () => {
-  // Arrange
-  const productData = { name: 'Test', price: 100 };
-  
-  // Act
-  const result = await productService.create(productData);
-  
-  // Assert
-  expect(result).toBeDefined();
-  expect(result.name).toBe('Test');
-});
-```
+1. **Naming**: Usar nombres descriptivos que expliquen qué se está probando
+2. **Arrange-Act-Assert**: Estructura clara de las pruebas
+3. **Mocking**: Mockear dependencias externas
+4. **Edge Cases**: Probar casos límite y errores
+5. **Cleanup**: Limpiar datos de prueba después de cada test
 
-### 3. Mocking
-- Mock servicios externos
-- Mock APIs
-- Mock base de datos
-- Usar factories para datos de prueba
+### Mantenimiento
 
-### 4. Async Testing
-```typescript
-it('should handle async operations', async () => {
-  await expect(asyncFunction()).resolves.toBe(expectedValue);
-});
-```
+1. **Actualizar mocks** cuando cambien las APIs
+2. **Revisar cobertura** regularmente
+3. **Refactorizar pruebas** cuando el código cambie
+4. **Documentar casos complejos** con comentarios
 
-## 🎯 Próximos Pasos
+## 🚨 Troubleshooting
 
-1. **Aumentar cobertura** de tests
-2. **Agregar tests de performance**
-3. **Implementar tests visuales** (Storybook)
-4. **Agregar tests de accesibilidad**
-5. **Implementar tests de carga**
+### Problemas Comunes
+
+1. **Tests fallan por timeouts**
+   - Aumentar timeout en configuración
+   - Verificar que los servicios estén corriendo
+
+2. **Mocks no funcionan**
+   - Verificar que los mocks estén antes de los imports
+   - Limpiar mocks entre tests
+
+3. **E2E tests fallan**
+   - Verificar que todos los servicios estén corriendo
+   - Revisar logs de Playwright para más detalles
+
+4. **Cobertura baja**
+   - Identificar archivos no cubiertos
+   - Agregar tests para casos faltantes
+
+## 📚 Recursos Adicionales
+
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Playwright Documentation](https://playwright.dev/docs/intro)
+- [NestJS Testing](https://docs.nestjs.com/fundamentals/testing)
 
 ---
 
-**Nota**: Esta guía se actualiza regularmente. Para preguntas específicas, consulta la documentación de cada framework o crea un issue en el repositorio.
-
-
-
-
+**Última actualización**: Octubre 2025  
+**Versión**: 1.0.0  
+**Mantenido por**: Equipo de Desarrollo StyleAI
