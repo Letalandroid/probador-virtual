@@ -38,7 +38,20 @@ JWT_SECRET=your-super-secret-jwt-key
 # Supabase
 SUPABASE_URL=https://schbbdodgajmbzeeriwd.supabase.co
 SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjaGJiZG9kZ2FqbWJ6ZWVyaXdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3MjMxNjMsImV4cCI6MjA3NDI5OTE2M30.AfrB3ZcQTqGkQzoMPIlINhmkcVvSq8ew29oVwypgKD0
+
+# Python AI API
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
+
+**Para el servicio de Python AI:**
+1. Ve al directorio `python/`
+2. Ejecuta: `./setup-env.sh` (o `bash setup-env.sh`)
+3. Sigue las instrucciones para configurar tu API key de Gemini
+
+**Obtener API key de Gemini:**
+- Visita: https://makersuite.google.com/app/apikey
+- Crea una nueva API key
+- Cópiala en el archivo `.env`
 
 ### 3. Ejecutar todos los servicios
 
