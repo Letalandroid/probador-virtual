@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   # Backend service (NestJS)
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile.npm
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -13,8 +11,7 @@ services:
       - PORT=3000
       - DATABASE_URL=${DATABASE_URL:-postgresql://postgres:password@postgres:5432/probador_virtual}
       - JWT_SECRET=${JWT_SECRET:-your-super-secret-jwt-key}
-      - SUPABASE_URL=${SUPABASE_URL:-https://schbbdodgajmbzeeriwd.supabase.co}
-      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjaGJiZG9kZ2FqbWJ6ZWVyaXdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3MjMxNjMsImV4cCI6MjA3NDI5OTE2M30.AfrB3ZcQTqGkQzoMPIlINhmkcVvSq8ew29oVwypgKD0}
+      - AI_API_URL=http://python-api:8000
     depends_on:
       - postgres
     networks:
@@ -31,8 +28,8 @@ services:
     environment:
       - VITE_API_BASE_URL=http://localhost:3000
       - VITE_PYTHON_API_URL=http://localhost:8000
-      - VITE_SUPABASE_URL=${SUPABASE_URL:-https://schbbdodgajmbzeeriwd.supabase.co}
-      - VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjaGJiZG9kZ2FqbWJ6ZWVyaXdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3MjMxNjMsImV4cCI6MjA3NDI5OTE2M30.AfrB3ZcQTqGkQzoMPIlINhmkcVvSq8ew29oVwypgKD0}
+      - VITE_SUPABASE_URL=${SUPABASE_URL:-}
+      - VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY:-}
     depends_on:
       - backend
       - python-api
@@ -72,7 +69,6 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./backend/prisma/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - probador-network
     restart: unless-stopped
