@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="42" failures="0" errors="0" time="3.543">
+  <testsuite name="AppController" errors="0" failures="0" skipped="0" timestamp="2025-11-13T15:00:27" time="2.053" tests="1">
+    <testcase classname="AppController root should return &quot;Hello World!&quot;" name="AppController root should return &quot;Hello World!&quot;" time="0.012">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthGuard" errors="0" failures="0" skipped="0" timestamp="2025-11-13T15:00:27" time="2.271" tests="8">
+    <testcase classname="AuthGuard canActivate should return true when token is valid" name="AuthGuard canActivate should return true when token is valid" time="0.014">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when no token provided" name="AuthGuard canActivate should throw UnauthorizedException when no token provided" time="0.011">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when token format is invalid" name="AuthGuard canActivate should throw UnauthorizedException when token format is invalid" time="0.003">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when token is invalid" name="AuthGuard canActivate should throw UnauthorizedException when token is invalid" time="0.005">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when token is expired" name="AuthGuard canActivate should throw UnauthorizedException when token is expired" time="0.009">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should handle different authorization header formats" name="AuthGuard canActivate should handle different authorization header formats" time="0.003">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when authorization header is missing" name="AuthGuard canActivate should throw UnauthorizedException when authorization header is missing" time="0.004">
+    </testcase>
+    <testcase classname="AuthGuard canActivate should throw UnauthorizedException when authorization header is empty" name="AuthGuard canActivate should throw UnauthorizedException when authorization header is empty" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProductsService" errors="0" failures="0" skipped="0" timestamp="2025-11-13T15:00:27" time="2.302" tests="20">
+    <testcase classname="ProductsService createProduct should create a product successfully" name="ProductsService createProduct should create a product successfully" time="0.014">
+    </testcase>
+    <testcase classname="ProductsService createProduct should throw NotFoundException when category does not exist" name="ProductsService createProduct should throw NotFoundException when category does not exist" time="0.025">
+    </testcase>
+    <testcase classname="ProductsService createProduct should handle Prisma validation errors" name="ProductsService createProduct should handle Prisma validation errors" time="0.003">
+    </testcase>
+    <testcase classname="ProductsService getAllProducts should return products with pagination" name="ProductsService getAllProducts should return products with pagination" time="0.003">
+    </testcase>
+    <testcase classname="ProductsService getAllProducts should filter by category when provided" name="ProductsService getAllProducts should filter by category when provided" time="0.003">
+    </testcase>
+    <testcase classname="ProductsService getAllProducts should search products when search term provided" name="ProductsService getAllProducts should search products when search term provided" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService getProductById should return product when found" name="ProductsService getProductById should return product when found" time="0.004">
+    </testcase>
+    <testcase classname="ProductsService getProductById should throw NotFoundException when product not found" name="ProductsService getProductById should throw NotFoundException when product not found" time="0.003">
+    </testcase>
+    <testcase classname="ProductsService updateProduct should update product successfully" name="ProductsService updateProduct should update product successfully" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService updateProduct should throw NotFoundException when product not found" name="ProductsService updateProduct should throw NotFoundException when product not found" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService updateProduct should validate category when category_id is provided" name="ProductsService updateProduct should validate category when category_id is provided" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService updateProduct should throw NotFoundException when new category does not exist" name="ProductsService updateProduct should throw NotFoundException when new category does not exist" time="0.001">
+    </testcase>
+    <testcase classname="ProductsService deleteProduct should delete product successfully" name="ProductsService deleteProduct should delete product successfully" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService deleteProduct should throw NotFoundException when product not found" name="ProductsService deleteProduct should throw NotFoundException when product not found" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService getProductsByCategory should call getAllProducts with category filter" name="ProductsService getProductsByCategory should call getAllProducts with category filter" time="0.001">
+    </testcase>
+    <testcase classname="ProductsService searchProducts should call getAllProducts with search filter" name="ProductsService searchProducts should call getAllProducts with search filter" time="0.001">
+    </testcase>
+    <testcase classname="ProductsService getFeaturedProducts should return featured products" name="ProductsService getFeaturedProducts should return featured products" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService updateProductStock should update stock successfully" name="ProductsService updateProductStock should update stock successfully" time="0.001">
+    </testcase>
+    <testcase classname="ProductsService updateProductStock should not allow negative stock" name="ProductsService updateProductStock should not allow negative stock" time="0.002">
+    </testcase>
+    <testcase classname="ProductsService updateProductStock should throw NotFoundException when product not found" name="ProductsService updateProductStock should throw NotFoundException when product not found" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2025-11-13T15:00:27" time="2.308" tests="13">
+    <testcase classname="AuthService register should register a new user successfully" name="AuthService register should register a new user successfully" time="0.014">
+    </testcase>
+    <testcase classname="AuthService register should throw ConflictException when user already exists" name="AuthService register should throw ConflictException when user already exists" time="0.015">
+    </testcase>
+    <testcase classname="AuthService register should handle Prisma validation errors" name="AuthService register should handle Prisma validation errors" time="0.003">
+    </testcase>
+    <testcase classname="AuthService register should assign default role when not provided" name="AuthService register should assign default role when not provided" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should login successfully with valid credentials" name="AuthService login should login successfully with valid credentials" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should throw UnauthorizedException when user not found" name="AuthService login should throw UnauthorizedException when user not found" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should throw UnauthorizedException when password is invalid" name="AuthService login should throw UnauthorizedException when password is invalid" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should throw UnauthorizedException when user has no password" name="AuthService login should throw UnauthorizedException when user has no password" time="0.001">
+    </testcase>
+    <testcase classname="AuthService validateUser should return user when found" name="AuthService validateUser should return user when found" time="0.001">
+    </testcase>
+    <testcase classname="AuthService validateUser should throw UnauthorizedException when user not found" name="AuthService validateUser should throw UnauthorizedException when user not found" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getCurrentUser should return current user data" name="AuthService getCurrentUser should return current user data" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getCurrentUser should throw NotFoundException when user not found" name="AuthService getCurrentUser should throw NotFoundException when user not found" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getCurrentUser should handle errors gracefully" name="AuthService getCurrentUser should handle errors gracefully" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
