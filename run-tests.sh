@@ -43,18 +43,6 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-detect_package_manager() {
-    if [ -f "pnpm-lock.yaml" ] && command_exists pnpm; then
-        echo "pnpm"
-    elif [ -f "package-lock.json" ] && command_exists npm; then
-        echo "npm"
-    elif command_exists pnpm; then
-        echo "pnpm"
-    else
-        echo "npm"
-    fi
-}
-
 # Verificar dependencias
 print_status "Verificando dependencias..."
 
@@ -74,7 +62,6 @@ print_success "Dependencias verificadas"
 run_tests() {
     local dir=$1
     local test_type=$2
-    local script_name=${3:-test}
     
     if [ ! -d "$dir" ]; then
         print_warning "Directorio $dir no encontrado, saltando..."
@@ -91,22 +78,15 @@ run_tests() {
         cd ..
         return 0
     fi
-
-    local package_manager
-    package_manager=$(detect_package_manager)
     
     # Instalar dependencias si es necesario
     if [ ! -d "node_modules" ]; then
-        print_status "Instalando dependencias en $dir con $package_manager..."
-        if ! $package_manager install; then
-            print_error "Error instalando dependencias en $dir"
-            cd ..
-            return 1
-        fi
+        print_status "Instalando dependencias en $dir..."
+        npm install
     fi
     
     # Ejecutar pruebas
-    if $package_manager run "$script_name" 2>/dev/null; then
+    if npm run test 2>/dev/null; then
         print_success "$test_type en $dir completadas exitosamente"
     else
         print_error "$test_type en $dir fallaron"
@@ -137,17 +117,14 @@ run_coverage_tests() {
         return 0
     fi
     
-    local package_manager
-    package_manager=$(detect_package_manager)
-    
     # Verificar si el script de cobertura existe
-    if $package_manager run test:coverage 2>/dev/null; then
+    if npm run test:coverage 2>/dev/null; then
         print_success "$test_type con cobertura en $dir completadas exitosamente"
-    elif $package_manager run test:cov 2>/dev/null; then
+    elif npm run test:cov 2>/dev/null; then
         print_success "$test_type con cobertura en $dir completadas exitosamente"
     else
         print_warning "Script de cobertura no encontrado en $dir, ejecutando pruebas normales..."
-        if $package_manager run test 2>/dev/null; then
+        if npm run test 2>/dev/null; then
             print_success "$test_type en $dir completadas exitosamente"
         else
             print_error "$test_type en $dir fallaron"
@@ -281,7 +258,7 @@ elif [ "$UNIT_ONLY" = true ]; then
     run_tests "backend" "Pruebas unitarias Backend"
     run_tests "frontend" "Pruebas unitarias Frontend"
 elif [ "$INTEGRATION_ONLY" = true ]; then
-    run_tests "backend" "Pruebas de integración Backend (Nest ↔ Python)" "test:e2e"
+    run_tests "backend" "Pruebas de integración Backend"
     run_tests "frontend" "Pruebas de integración Frontend"
 elif [ "$COVERAGE_ONLY" = true ]; then
     run_coverage_tests "backend" "Pruebas Backend"
@@ -296,7 +273,7 @@ else
     run_tests "frontend" "Pruebas unitarias Frontend"
     
     # Pruebas de integración
-    run_tests "backend" "Pruebas de integración Backend (Nest ↔ Python)" "test:e2e"
+    run_tests "backend" "Pruebas de integración Backend"
     run_tests "frontend" "Pruebas de integración Frontend"
     
     # Pruebas E2E (opcional, comentado por defecto)
