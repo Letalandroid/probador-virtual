@@ -215,7 +215,7 @@ El sistema contribuye a la transformación digital del negocio de manera positiv
 **Objetivo:** Evaluar el rendimiento y la estabilidad del probador virtual mediante la fluidez del sistema y ausencia de errores durante su uso.
 
 ### Pregunta 6.1
-El probador virtual responde de manera rápida y fluida cuando cargo mi imagen.
+El probador virtual responde de manera rápida y fluida cuando se carga una imagen.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -236,14 +236,14 @@ El sistema funciona de manera estable sin interrupciones o cierres inesperados d
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 6.4
-No he experimentado errores técnicos significativos al usar el probador virtual.
+No se presentan errores técnicos significativos al usar el probador virtual.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 6.5
-El rendimiento general del probador virtual es satisfactorio y no afecta negativamente mi experiencia de uso.
+El rendimiento general del probador virtual es satisfactorio y no afecta negativamente la experiencia de uso.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
