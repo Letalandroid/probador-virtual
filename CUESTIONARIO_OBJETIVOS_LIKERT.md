@@ -15,7 +15,7 @@ Este cuestionario evalúa el cumplimiento de los objetivos específicos del proy
 **Objetivo:** Ofrecer a los clientes la posibilidad de simular virtualmente la apariencia de las prendas mediante la carga de una imagen o avatar personalizado.
 
 ### Pregunta 1.1
-La aplicación me permite cargar fácilmente mi propia imagen para probar las prendas virtualmente.
+La aplicación permite cargar fácilmente imágenes propias para probar las prendas virtualmente.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -29,7 +29,7 @@ El proceso de carga de imagen es claro y fácil de entender.
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 1.3
-La simulación virtual muestra de manera realista cómo se verían las prendas en mi persona.
+La simulación virtual muestra de manera realista cómo se verían las prendas en una persona.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -43,7 +43,7 @@ La calidad de la visualización virtual es suficiente para tomar decisiones de c
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 1.5
-La función de probador virtual cumple con mis expectativas para simular la apariencia de las prendas.
+La función de probador virtual cumple con las expectativas para simular la apariencia de las prendas.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -69,14 +69,14 @@ La información de los productos (precio, tallas, colores, descripción) está a
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 2.3
-Puedo acceder fácilmente desde el catálogo al probador virtual para cualquier prenda disponible.
+Es posible acceder fácilmente desde el catálogo al probador virtual para cualquier prenda disponible.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 2.4
-La información del producto se muestra correctamente cuando uso el probador virtual.
+La información del producto se muestra correctamente al usar el probador virtual.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -102,14 +102,14 @@ La interfaz de la aplicación es intuitiva y fácil de usar.
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 3.2
-La aplicación funciona correctamente en mi dispositivo móvil.
+La aplicación funciona correctamente en dispositivos móviles.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 3.3
-La aplicación funciona correctamente en mi computadora.
+La aplicación funciona correctamente en computadoras.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -135,35 +135,35 @@ La experiencia de uso es consistente entre dispositivos móviles y computadoras.
 **Objetivo:** Incrementar la confianza del cliente en las compras en línea al proporcionar visualizaciones realistas y personalizadas de las prendas.
 
 ### Pregunta 4.1
-El probador virtual aumenta mi confianza al realizar compras en línea.
+El probador virtual aumenta la confianza al realizar compras en línea.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 4.2
-Las visualizaciones del probador virtual son lo suficientemente realistas para ayudarme a decidir si comprar una prenda.
+Las visualizaciones del probador virtual son lo suficientemente realistas para ayudar a decidir si comprar una prenda.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 4.3
-El probador virtual reduce mi incertidumbre sobre cómo se verá una prenda en mí antes de comprarla.
+El probador virtual reduce la incertidumbre sobre cómo se verá una prenda antes de comprarla.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 4.4
-La personalización de la visualización (usando mi propia imagen) hace que la experiencia sea más confiable.
+La personalización de la visualización (usando imágenes propias) hace que la experiencia sea más confiable.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 4.5
-Estoy más dispuesto a comprar prendas en línea cuando puedo probarlas virtualmente primero.
+Se está más dispuesto a comprar prendas en línea cuando se pueden probar virtualmente primero.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
@@ -182,7 +182,7 @@ El sistema es fácil de aprender y usar para el personal de la tienda.
 | Totalmente en desacuerdo | En desacuerdo | Neutral | De acuerdo | Totalmente de acuerdo |
 
 ### Pregunta 5.2
-La capacitación recibida fue suficiente para usar el sistema de manera eficiente.
+La capacitación proporcionada fue suficiente para usar el sistema de manera eficiente.
 
 | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|
