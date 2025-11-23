@@ -431,4 +431,4 @@ jobs:
 
 **Última actualización**: Octubre 2025  
 **Versión**: 1.0.0  
-**Mantenido por**: Equipo de Desarrollo StyleAI
+**Mantenido por**: Carlos Moran Mauricio StyleAI
