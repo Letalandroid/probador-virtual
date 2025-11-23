@@ -81,6 +81,8 @@ El footer incluye:
 - Enlaces a redes sociales (si están disponibles)
 - Información legal y de privacidad
 
+![Footer de la Aplicación](images/client/Footer.png)
+
 ---
 
 ## Funcionalidades para Clientes
@@ -98,12 +100,16 @@ El footer incluye:
 3. Haz clic en **"Registrarse"**
 4. Recibirás una confirmación de registro exitoso
 
+![Apartado de Registro](images/client/Apartado%20de%20register.png)
+
 #### Iniciar Sesión
 
 1. Haz clic en **"Iniciar Sesión"** en el header
 2. Ingresa tu email y contraseña
 3. Haz clic en **"Iniciar Sesión"**
 4. Serás redirigido a la página de inicio
+
+![Apartado de Inicio de Sesión](images/client/Apartado%20de%20login.png)
 
 #### Recuperar Contraseña
 
@@ -124,6 +130,8 @@ La página de inicio muestra:
   - Haz clic en una categoría para ver sus productos
 - **Características**: Información sobre las funcionalidades principales
 
+![Página de Inicio](images/client/Inicio.png)
+
 #### Página de Productos
 
 1. Accede desde el menú **"Productos"** o desde la página de inicio
@@ -138,6 +146,12 @@ La página de inicio muestra:
    - Precio
    - Botón **"Probar con IA"** (solo para prendas de torso)
    - Botón **"Ver Detalles"**
+
+**Apartado de Mujeres:**
+![Apartado de Mujeres](images/client/Apartado%20de%20mujeres.png)
+
+**Apartado de Hombres:**
+![Apartado de Hombres](images/client/Apartado%20de%20hombre.png)
 
 #### Detalles del Producto
 
@@ -156,6 +170,8 @@ Al hacer clic en un producto, verás:
   - **"Probar con IA"**: Abre el probador virtual (solo prendas de torso)
   - **"Agregar al Carrito"**: Añade el producto al carrito
   - **"Compartir"**: Comparte el producto en redes sociales
+
+![Detalle de la Prenda](images/client/Detalle%20de%20la%20prenda.png)
 
 ### Perfil de Usuario
 
@@ -179,6 +195,10 @@ En tu perfil puedes:
   - Productos vistos
   - Productos probados virtualmente
   - Pedidos realizados
+
+![Mi Perfil - Mis Datos](images/client/Mi%20perfil%2C%20mis%20datos.png)
+
+![Mi Perfil - Configuración de la Cuenta](images/client/Mi%20perfil%2C%20configuracion%20de%20la%20cuenta.png)
 
 #### Cambiar Contraseña
 
@@ -221,6 +241,8 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
 
 ⚠️ **Importante**: Si no se cumplen estos requisitos, el resultado puede no ser el esperado.
 
+![Instrucciones del Probador Virtual](images/client/Probador%20virtual%20instrucciones.png)
+
 #### Paso 3: Subir tu Foto
 
 1. En la página del probador virtual, verás:
@@ -238,6 +260,8 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
 3. Espera mientras el sistema procesa la imagen (puede tardar unos segundos)
 4. Verás un indicador de progreso
 
+![Probador Virtual - Procesando](images/client/Probador%20virtual%20procesando.png)
+
 #### Paso 5: Ver el Resultado
 
 1. Una vez completado el procesamiento, verás:
@@ -249,6 +273,8 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
    - **Probar otra prenda** con la misma foto
    - **Cambiar de foto** para probar otra prenda
    - **Volver al catálogo** para explorar más productos
+
+![Probador Virtual - Resultado](images/client/Probador%20virtual%20resultado.png)
 
 ### Consejos para Mejores Resultados
 
@@ -291,6 +317,9 @@ Muestra estadísticas generales:
 
 #### 2. Gestión de Productos
 
+**Gestión de Productos:**
+![Gestión de Productos](images/admin/Gestion%20de%20productos.png)
+
 **Crear Producto:**
 1. Haz clic en **"Nuevo Producto"**
 2. Completa el formulario:
@@ -306,10 +335,14 @@ Muestra estadísticas generales:
    - Imagen del producto
 3. Haz clic en **"Crear Producto"**
 
+![Añadir Producto](images/admin/A%C3%B1adir%20producto.png)
+
 **Editar Producto:**
 1. En la lista de productos, haz clic en el icono de editar
 2. Modifica los campos necesarios
 3. Haz clic en **"Guardar Cambios"**
+
+![Editar Producto](images/admin/Editar%20producto.png)
 
 **Eliminar Producto:**
 1. En la lista de productos, haz clic en el icono de eliminar
@@ -337,6 +370,8 @@ Muestra estadísticas generales:
 - Lista completa de usuarios registrados
 - Filtros por rol (Admin, Cliente)
 - Búsqueda por email o nombre
+
+![Gestión de Usuarios](images/admin/Gestion%20de%20usuarios.png)
 
 **Cambiar Rol de Usuario:**
 1. Selecciona un usuario
@@ -374,6 +409,8 @@ Muestra estadísticas generales:
 3. Haz clic en **"Generar Reporte"**
 4. Descarga el reporte en el formato deseado
 
+![Reportes](images/admin/Reportes.png)
+
 #### 6. Estado de Servicios
 
 **Monitoreo del Sistema:**
@@ -382,6 +419,8 @@ Muestra estadísticas generales:
 - Estado del Servicio de IA (Python FastAPI)
 - Tiempo de respuesta
 - Última verificación
+
+![Gestión de Servicios](images/admin/Gestion%20de%20servicios%20front%2C%20back%2C%20python.png)
 
 **Actualizar Estado:**
 - Haz clic en **"Actualizar"** para verificar el estado actual de los servicios
