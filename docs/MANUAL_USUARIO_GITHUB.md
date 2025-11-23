@@ -200,14 +200,6 @@ En tu perfil puedes:
 
 <img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Mi%20perfil%2C%20configuracion%20de%20la%20cuenta.png" alt="Mi Perfil - Configuración de la Cuenta" style="width: 600px; max-width: 100%; height: auto;" />
 
-#### Cambiar Contraseña
-
-1. En tu perfil, busca la sección **"Seguridad"**
-2. Ingresa tu contraseña actual
-3. Ingresa tu nueva contraseña
-4. Confirma la nueva contraseña
-5. Haz clic en **"Actualizar Contraseña"**
-
 ---
 
 ## Probador Virtual

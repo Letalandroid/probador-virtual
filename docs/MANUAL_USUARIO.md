@@ -200,14 +200,6 @@ En tu perfil puedes:
 
 ![Mi Perfil - Configuración de la Cuenta](images/client/Mi%20perfil%2C%20configuracion%20de%20la%20cuenta.png)
 
-#### Cambiar Contraseña
-
-1. En tu perfil, busca la sección **"Seguridad"**
-2. Ingresa tu contraseña actual
-3. Ingresa tu nueva contraseña
-4. Confirma la nueva contraseña
-5. Haz clic en **"Actualizar Contraseña"**
-
 ---
 
 ## Probador Virtual
