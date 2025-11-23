@@ -81,7 +81,7 @@ El footer incluye:
 - Enlaces a redes sociales (si están disponibles)
 - Información legal y de privacidad
 
-![Footer de la Aplicación](https://raw.githubusercontent.com/Letalandroid/probador-virtual/refs/heads/main/docs/images/client/Footer.png)
+<img src="https://raw.githubusercontent.com/Letalandroid/probador-virtual/refs/heads/main/docs/images/client/Footer.png" alt="Footer de la Aplicación" style="width: 600px; max-width: 100%; height: auto;" />
 
 ---
 
@@ -100,7 +100,7 @@ El footer incluye:
 3. Haz clic en **"Registrarse"**
 4. Recibirás una confirmación de registro exitoso
 
-![Apartado de Registro](https://raw.githubusercontent.com/Letalandroid/probador-virtual/refs/heads/main/docs/images/client/Apartado%20de%20register.png)
+<img src="https://raw.githubusercontent.com/Letalandroid/probador-virtual/refs/heads/main/docs/images/client/Apartado%20de%20register.png" alt="Apartado de Registro" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Iniciar Sesión
 
@@ -109,7 +109,7 @@ El footer incluye:
 3. Haz clic en **"Iniciar Sesión"**
 4. Serás redirigido a la página de inicio
 
-![Apartado de Inicio de Sesión](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20login.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20login.png" alt="Apartado de Inicio de Sesión" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Recuperar Contraseña
 
@@ -130,7 +130,7 @@ La página de inicio muestra:
   - Haz clic en una categoría para ver sus productos
 - **Características**: Información sobre las funcionalidades principales
 
-![Página de Inicio](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Inicio.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Inicio.png" alt="Página de Inicio" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Página de Productos
 
@@ -148,10 +148,10 @@ La página de inicio muestra:
    - Botón **"Ver Detalles"**
 
 **Apartado de Mujeres:**
-![Apartado de Mujeres](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20mujeres.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20mujeres.png" alt="Apartado de Mujeres" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Apartado de Hombres:**
-![Apartado de Hombres](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20hombre.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Apartado%20de%20hombre.png" alt="Apartado de Hombres" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Detalles del Producto
 
@@ -171,7 +171,7 @@ Al hacer clic en un producto, verás:
   - **"Agregar al Carrito"**: Añade el producto al carrito
   - **"Compartir"**: Comparte el producto en redes sociales
 
-![Detalle de la Prenda](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Detalle%20de%20la%20prenda.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Detalle%20de%20la%20prenda.png" alt="Detalle de la Prenda" style="width: 600px; max-width: 100%; height: auto;" />
 
 ### Perfil de Usuario
 
@@ -196,9 +196,9 @@ En tu perfil puedes:
   - Productos probados virtualmente
   - Pedidos realizados
 
-![Mi Perfil - Mis Datos](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Mi%20perfil%2C%20mis%20datos.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Mi%20perfil%2C%20mis%20datos.png" alt="Mi Perfil - Mis Datos" style="width: 600px; max-width: 100%; height: auto;" />
 
-![Mi Perfil - Configuración de la Cuenta](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Mi%20perfil%2C%20configuracion%20de%20la%20cuenta.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Mi%20perfil%2C%20configuracion%20de%20la%20cuenta.png" alt="Mi Perfil - Configuración de la Cuenta" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Cambiar Contraseña
 
@@ -241,7 +241,7 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
 
 ⚠️ **Importante**: Si no se cumplen estos requisitos, el resultado puede no ser el esperado.
 
-![Instrucciones del Probador Virtual](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20instrucciones.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20instrucciones.png" alt="Instrucciones del Probador Virtual" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Paso 3: Subir tu Foto
 
@@ -260,7 +260,7 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
 3. Espera mientras el sistema procesa la imagen (puede tardar unos segundos)
 4. Verás un indicador de progreso
 
-![Probador Virtual - Procesando](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20procesando.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20procesando.png" alt="Probador Virtual - Procesando" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### Paso 5: Ver el Resultado
 
@@ -274,7 +274,7 @@ El probador virtual utiliza inteligencia artificial para superponer prendas de r
    - **Cambiar de foto** para probar otra prenda
    - **Volver al catálogo** para explorar más productos
 
-![Probador Virtual - Resultado](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20resultado.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/client/Probador%20virtual%20resultado.png" alt="Probador Virtual - Resultado" style="width: 600px; max-width: 100%; height: auto;" />
 
 ### Consejos para Mejores Resultados
 
@@ -318,7 +318,7 @@ Muestra estadísticas generales:
 #### 2. Gestión de Productos
 
 **Gestión de Productos:**
-![Gestión de Productos](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20productos.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20productos.png" alt="Gestión de Productos" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Crear Producto:**
 1. Haz clic en **"Nuevo Producto"**
@@ -335,14 +335,14 @@ Muestra estadísticas generales:
    - Imagen del producto
 3. Haz clic en **"Crear Producto"**
 
-![Añadir Producto](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/A%C3%B1adir%20producto.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/A%C3%B1adir%20producto.png" alt="Añadir Producto" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Editar Producto:**
 1. En la lista de productos, haz clic en el icono de editar
 2. Modifica los campos necesarios
 3. Haz clic en **"Guardar Cambios"**
 
-![Editar Producto](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Editar%20producto.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Editar%20producto.png" alt="Editar Producto" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Eliminar Producto:**
 1. En la lista de productos, haz clic en el icono de eliminar
@@ -371,7 +371,7 @@ Muestra estadísticas generales:
 - Filtros por rol (Admin, Cliente)
 - Búsqueda por email o nombre
 
-![Gestión de Usuarios](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20usuarios.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20usuarios.png" alt="Gestión de Usuarios" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Cambiar Rol de Usuario:**
 1. Selecciona un usuario
@@ -409,7 +409,7 @@ Muestra estadísticas generales:
 3. Haz clic en **"Generar Reporte"**
 4. Descarga el reporte en el formato deseado
 
-![Reportes](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Reportes.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Reportes.png" alt="Reportes" style="width: 600px; max-width: 100%; height: auto;" />
 
 #### 6. Estado de Servicios
 
@@ -420,7 +420,7 @@ Muestra estadísticas generales:
 - Tiempo de respuesta
 - Última verificación
 
-![Gestión de Servicios](https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20servicios%20front%2C%20back%2C%20python.png)
+<img src="https://github.com/Letalandroid/probador-virtual/raw/main/docs/images/admin/Gestion%20de%20servicios%20front%2C%20back%2C%20python.png" alt="Gestión de Servicios" style="width: 600px; max-width: 100%; height: auto;" />
 
 **Actualizar Estado:**
 - Haz clic en **"Actualizar"** para verificar el estado actual de los servicios
